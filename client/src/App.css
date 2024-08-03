@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC&display=swap');
+
+html,
+body,
+#root,
+.bg,
+canvas {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  background: #000;
+  font-family: "Arsenal SC", sans-serif;
+}
+
+.bg {
+  position: absolute;
+  background: radial-gradient(at 50% 100%, #111933 0%, #0c0c11 40%, #0c0c12 80%, #070710 100%);
+}
+
+.name {
+  position: absolute;
+  top: 90px;
+  left: 80px;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  line-height: 1em;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+h1 > span {
+  white-space: pre;
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(3, 2, 55, 0.25) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+span.header {
+  font-weight: 700;
+  position: absolute;
+  display: inline-block;
+  width: 500px;
+  transform: translate3d(0, -50%, 0);
+  font-size: 9em;
+  line-height: 0.9em;
+  pointer-events: none;
+  top: 350px;
+  left: 50px;
+}
+
+span.header-left {
+  font-family: "Arsenal SC", sans-serif;
+  font-weight: 700;
+  position: absolute;
+  display: inline-block;
+  transform: translate3d(0, -50%, 0);
+  line-height: 1em;
+  top: 200px;
+  left: 60px;
+  font-size: 4em;
+  width: 200px;
+}
+
+a {
+  font-weight: 400;
+  font-size: 14px;
+  color: inherit;
+  position: absolute;
+  display: inline;
+  text-decoration: none;
+  z-index: 1;
+  color: white;
+}
+
+a.top-left {
+  top: 60px;
+  left: 60px;
+}
+
+a.top-right {
+  top: 60px;
+  right: 60px;
+}
+
+a.bottom-left {
+  bottom: 50px;
+  left: 60px;
+}
+
+a.bottom-right {
+  bottom: 60px;
+  right: 60px;
+}
+
+.mute-button {
+  position: absolute;
+  padding: 2px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.explore {
+  position: absolute;
+  bottom: 16em;
+  right: 18em;
+  cursor: pointer;
+}
+
+.desc {
+  position: absolute;
+  bottom: 12em;
+  left: 10em;
+}
+
+.click {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  animation: fadeIn 6s forwards;
+  display: flex;
+  align-items: center;
+}
+
+.about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  display: flex;
+  align-items: center;
+}
+
+.about-text {
+  position: relative;
+  margin: 0 20px;
+}
+
+.about-text::before,
+.about-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 2em; 
+  height: 1px;
+  background-color: white;
+}
+
+.about-text::before {
+  left: -2.5em; 
+}
+
+.about-text::after {
+  right: -2.5em; 
+}
+
+.dash {
+  margin-left: -3em;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0.1;
+  }
+}
+
+.about-desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 2s forwards;
+  border: 0.1px solid white;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: -5.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  display: flex;
+  align-items: center;
+}
