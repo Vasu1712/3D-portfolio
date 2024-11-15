@@ -13,15 +13,17 @@ const ScrollManager = ({ showAboutDescription }) => {
   useFrame(() => {
     setScrollProgress(scroll.offset);
 
-    if (scroll.offset < 1 / 10) {
+    if (scroll.offset < 1 / 20) {
       setCurrentType('about');
-    } else if (scroll.offset >= 1 / 10 && scroll.offset < 7 / 10) {
+    } else if (scroll.offset >= 1 / 20 && scroll.offset < 11 / 20) {
       setCurrentType('projects');
-    } else if (scroll.offset >= 7 / 10 && scroll.offset<= 9/10) {
+    } else if (scroll.offset >= 11 / 20 && scroll.offset<= 17/20) {
       setCurrentType('achievements');
+    } else if (scroll.offset >= 17 / 20 && scroll.offset<= 19/20) {
+        setCurrentType('skills');
     }
     else {
-        setCurrentType('skills');
+        setCurrentType('contact me');
       }
   });
 
@@ -35,8 +37,10 @@ const ScrollManager = ({ showAboutDescription }) => {
           footerElement.textContent = 'Projects';
         } else if (currentType === 'achievements'){
           footerElement.textContent = 'Achievements';
-        } else {
+        } else if (currentType === 'skills'){
             footerElement.textContent = 'Skills';
+        } else {
+            footerElement.textContent = 'Contact Me';
         }
       }
     };
@@ -50,6 +54,7 @@ const ScrollManager = ({ showAboutDescription }) => {
         <SpringMeshes scrollProgress={scrollProgress} type={currentType} count={currentType === 'projects' ? 10 : 6} />
       )}
       {showAboutDescription && currentType === 'skills' && <SkillsTextMesh />}
+      {showAboutDescription && currentType === 'contact me' }
     </>
   );
 };

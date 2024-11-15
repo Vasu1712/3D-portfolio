@@ -213,7 +213,6 @@ a.bottom-right {
   border: 0.1px solid white;
 }
 
-
 .footer {
   position: absolute;
   bottom: -5.5%;
@@ -224,4 +223,63 @@ a.bottom-right {
   animation: fadeIn 3s forwards;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 430px) {
+  .name {
+    top: 3vh;
+    left: 3vw;
+    font-size: 1em;
+  }
+
+  span.header {
+    width: 90%;
+    font-size: 4em;
+    top: 200px;
+    left: 20px;
+  }
+
+  span.header-left {
+    font-size: 2.5em;
+    top: 100px;
+    left: 20px;
+    width: auto;
+  }
+
+  .a {
+    font-size: 12px;
+  }
+
+  .a.top-left, .a.top-right, .a.bottom-left, .a.bottom-right {
+    top: 210px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .desc {
+    bottom: 6em;
+    left: 5em;
+  }
+
+  .click, .footer {
+    top: 30%;
+    transform: translate(-50%, 0);
+    font-size: 0.8em;
+  }
+
+  .about {  
+    top: 30%;
+    transform: translate(-50%, 0);
+    font-size: 0.3em;
+  }
+
+  .about-text {
+    margin: 0 10px;
+  }
+
+  .explore {
+    bottom: 8em;
+    right: 2em;
+  }
 }
