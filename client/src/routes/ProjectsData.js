@@ -1,5 +1,3 @@
-import xros from '../assets/project_images/xros.png';
-import hireXS from '../assets/project_images/hireXS.png';
 const projectsData = [
     {
       id: 1,

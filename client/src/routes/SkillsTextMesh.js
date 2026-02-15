@@ -1,7 +1,5 @@
 import React, { useRef } from 'react';
-import { Text, Plane, Image } from '@react-three/drei';
-import * as THREE from 'three';
-import react from '../assets/skills_images/react.svg';
+import { Image } from '@react-three/drei';
 
 const skills = [
   { name: 'ReactJS', icon: 'https://res.cloudinary.com/dvfzcoyuk/image/upload/v1722926087/react_uus18m.svg' },

@@ -1,5 +1,3 @@
-import sparkathon from '../assets/achievements_images/sparkathon.jpeg';
-import hireXS from '../assets/project_images/hireXS.png';
 const achievementsData = [
     {
       id: 1,
