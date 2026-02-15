@@ -16,15 +16,19 @@ function Model({ url, position, isMuted }) {
   const animationDuration = 4;
 
   useEffect(() => {
+    const currentListener = listener.current;
+    const currentSound = sound.current;
+    const currentAudioLoader = audioLoader.current;
+
     const loadAudio = () => {
-      audioLoader.current.load(
+      currentAudioLoader.load(
         soundFile,
         (buffer) => {
-          sound.current.setBuffer(buffer);
-          sound.current.setLoop(true);
-          sound.current.setVolume(isMuted ? 0 : 0.5);
+          currentSound.setBuffer(buffer);
+          currentSound.setLoop(true);
+          currentSound.setVolume(isMuted ? 0 : 0.5);
           if (!isMuted) {
-            sound.current.play();
+            currentSound.play();
           }
         },
         undefined,
@@ -35,13 +39,15 @@ function Model({ url, position, isMuted }) {
     };
 
     loadAudio();
-    scene.add(listener.current);
+    scene.add(currentListener);
 
     return () => {
-      if (sound.current.isPlaying) {
-        sound.current.stop();
+      if (currentSound && currentSound.isPlaying) {
+        currentSound.stop();
       }
-      scene.remove(listener.current);
+      if (currentListener) {
+        scene.remove(currentListener);
+      }
     };
   }, [scene, isMuted]);
 
@@ -70,11 +76,9 @@ function Model({ url, position, isMuted }) {
     const scrollOffset = scroll.offset;
 
     if (ref.current) {
-      // Update animation progress
       setAnimationProgress((prev) => Math.min(prev + delta / animationDuration, 1));
-
-      // Calculate scale and rotation based on animation progress
-      const scale = THREE.MathUtils.lerp(0.1, 2.5, animationProgress); // Lerp from 0.01 to 2.5
+      
+      const scale = THREE.MathUtils.lerp(0.1, 2.5, animationProgress); 
       ref.current.scale.set(scale, scale, scale);
       ref.current.position.set(0, THREE.MathUtils.lerp(-20, -4.2, animationProgress) + scrollOffset * 0.4, 0);
       ref.current.rotation.set(0, THREE.MathUtils.lerp(0, 0.025, animationProgress) - scrollOffset * Math.PI * 0.4, 0);

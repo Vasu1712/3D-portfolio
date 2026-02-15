@@ -8,7 +8,6 @@ import Model from './Model';
 import CameraAnimation from './CameraAnimation';
 import Loader from './Loader';
 import ScrollManager from './ScrollManager';
-import ContactMe from './ContactMe';
 import vasu from '../assets/untitled.glb';
 import '../App.css';
 

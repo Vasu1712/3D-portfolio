@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text } from '@react-three/drei';
 
 const AboutTextMesh = ({ scrollProgress, animationDone }) => {
-  const meshRef = useRef();
   const [textProps, setTextProps] = useState({
     fontSize: 0.1,
     maxWidth: 4

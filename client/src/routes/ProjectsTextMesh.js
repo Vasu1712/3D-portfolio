@@ -3,8 +3,6 @@ import { useFrame } from '@react-three/fiber';
 import { Text, Image, Plane } from '@react-three/drei';
 import * as THREE from 'three';
 import projectsData from './ProjectsData';
-import xros from '../assets/project_images/xros.png';
-import hireXS from '../assets/project_images/hireXS.png';
 
 const ProjectTextMesh = ({ scrollProgress, index, visible }) => {
   const meshRef = useRef();
