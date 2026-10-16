@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './routes/Home.js';
 import ResumeRoute from './routes/resume-route/ResumeRoute';
+import ResumeRouteAI from './routes/resume-route/ResumeRouteAI';
 
 
 function App() {
@@ -15,8 +16,12 @@ function App() {
             element=<Home />
           />
           <Route
-            path='/resume'
+            path='/cv'
             element=<ResumeRoute />
+          />
+          <Route
+            path='/resume'
+            element=<ResumeRouteAI />
           />
         </Routes>
       </BrowserRouter>
