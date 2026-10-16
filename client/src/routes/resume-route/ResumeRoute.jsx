@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ResumeRoute = () => {
-  const resumeFileId = process.env.REACT_APP_RESUME_FILE_ID;
+  const resumeFileId = import.meta.env.VITE_RESUME_FILE_ID;
   const embedUrl = `https://drive.google.com/file/d/${resumeFileId}/preview`;
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${resumeFileId}`;
 

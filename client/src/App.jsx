@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './routes/Home.js';
+import Home from './routes/Home';
 import ResumeRoute from './routes/resume-route/ResumeRoute';
 import ResumeRouteAI from './routes/resume-route/ResumeRouteAI';
 
